@@ -10,13 +10,14 @@ const url = import.meta.env.PUBLIC_URL;
     <meta name='viewport' content='width=device-width' />
     <title>{title}</title>
     <meta property='og:title' content={title} />
-    <meta
-      property='og:image'
-      content='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCI+PHJlY3QgZmlsbD0iI2ZmZiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjxmb3JlaWduT2JqZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNTAwIiB4PSIzMDAiIHk9IjY1Ij48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZm9udC1zaXplOjI0cHg7Zm9udC1mYW1pbHk6QXJpYWwsc2Fucy1zZXJpZiI+VGhpcyBpcyBhIGZyYW1lIHRoYXQgZGlzcGxheXMgYSB1cmkgZW5jb2RlZCBzdmcuPC9kaXY+PGJyLz48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZm9udC1zaXplOjI0cHg7Ij5UZXh0IGlzIGRpc3BsYXllZCB1c2luZyBhICZsdDtmb3JlaWduT2JqZWN0Jmd0OyB0YWcuIFRoaXMgbGV0cyB1cyB3cmFwIHRoZSB0ZXh0IGlmIGEgbGluZSBvdmVyZmxvd3MuPC9kaXY+PC9mb3JlaWduT2JqZWN0Pjwvc3ZnPg=='
-    />
+    <meta property='og:image' content='https://placehold.co/1200x630' />
 
     <meta property='fc:frame' content='vNext' />
-    <meta property='fc:frame:image' content='https://placehold.co/1200x630' />
+
+    <meta
+      property='fc:frame:image'
+      content='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCI+PHJlY3QgZmlsbD0iI2ZmZiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjxmb3JlaWduT2JqZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNTAwIiB4PSIzMDAiIHk9IjY1Ij48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZm9udC1zaXplOjI0cHg7Zm9udC1mYW1pbHk6QXJpYWwsc2Fucy1zZXJpZiI+VGhpcyBpcyBhIGZyYW1lIHRoYXQgZGlzcGxheXMgYSB1cmkgZW5jb2RlZCBzdmcuPC9kaXY+PGJyLz48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZm9udC1zaXplOjI0cHg7Ij5UZXh0IGlzIGRpc3BsYXllZCB1c2luZyBhICZsdDtmb3JlaWduT2JqZWN0Jmd0OyB0YWcuIFRoaXMgbGV0cyB1cyB3cmFwIHRoZSB0ZXh0IGlmIGEgbGluZSBvdmVyZmxvd3MuPC9kaXY+PC9mb3JlaWduT2JqZWN0Pjwvc3ZnPg=='
+    />
     <meta property='fc:frame:button:1' content='Button 1' />
     <!-- Add more buttons as needed -->
     <meta property='fc:frame:post_url' content={url + `/api/handleFrameClick`} />
