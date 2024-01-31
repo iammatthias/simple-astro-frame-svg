@@ -17,11 +17,10 @@ const base64EncodedSVG = btoa(svgString);
 
     <meta property='fc:frame' content='vNext' />
 
-    <meta property='fc:frame:image' content={`data:image/svg+xml;base64,` + base64EncodedSVG} />
+    <meta property='fc:frame:image' content={"data:image/svg+xml;base64," + base64EncodedSVG} />
     <meta property='fc:frame:button:1' content='Button 1' />
     <!-- Add more buttons as needed -->
-    <!-- <meta property='fc:frame:post_url' content={url + `/api/handleFrameClick`} /> -->
-    <meta property='fc:frame:post_url' content={url} />
+    <meta property='fc:frame:post_url' content={url + `/api/handleFrameClick`} />
   </head>
 
   <body>
@@ -29,26 +28,3 @@ const base64EncodedSVG = btoa(svgString);
     <p>A simple Farcaster Frame built with Astro</p>
   </body>
 </html>
-
-<script>
-  // Handler for POST requests
-  export const POST = async ({ request }) => {
-    const requestData = await request.json();
-    // Process requestData, verify signature, etc.
-
-    // Return new frame metadata
-    return new Response(
-      `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta property="fc:frame" content="vNext" />
-        <meta property='fc:frame:image' content='https://placehold.co/1200x630?text=test' />
-        <!-- Add more meta tags as needed -->
-      </head>
-    </html>
-    `,
-      { headers: { "Content-Type": "text/html" } }
-    );
-  };
-</script>
