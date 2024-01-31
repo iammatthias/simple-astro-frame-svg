@@ -9,6 +9,8 @@ export const POST = async ({ request }) => {
   const requestData = await request.json();
   // Process requestData, verify signature, etc.
 
+  console.log(requestData);
+
   // Return new frame metadata
   return new Response(
     `
@@ -16,7 +18,7 @@ export const POST = async ({ request }) => {
     <html>
       <head>
         <meta property="fc:frame" content="vNext" />
-        <meta property='fc:frame:image' content={"data:image/svg+xml;base64," + base64EncodedSVG} />
+        <meta property='fc:frame:image' content="data:image/svg+xml;base64${base64EncodedSVG}" />
         <!-- Add more meta tags as needed -->
       </head>
     </html>
