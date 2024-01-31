@@ -46,6 +46,14 @@ In this example, the SVG is pre-encoded, but you can handle the encoding however
 
 OG images do not support SVGs, so you will need to provide a static fallback image or generate a PNG from the SVG using a tool like Sharp.
 
+### NOTE
+
+SVGs are not (currently) supported in Warpcast on iOS, rendering this exercise a bit moot. However, the concept is still valid for other platforms, and SVGKit has been proposed as a solution.
+
+- https://warpcast.com/blankspace/0x594e127f
+- https://warpcast.com/m0nt0y4/0xcf9e5451
+- https://warpcast.com/m0nt0y4/0x8a294236
+
 ```html
 ## 🧞 Commands All commands are run from the root of the project, from a terminal: | Command | Action | |
 :-------------------- | :----------------------------------------------- | | `bun install` | Installs dependencies | |
