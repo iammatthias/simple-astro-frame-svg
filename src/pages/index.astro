@@ -1,0 +1,29 @@
+---
+const title = import.meta.env.PUBLIC_TITLE;
+const url = import.meta.env.PUBLIC_URL;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <title>{title}</title>
+    <meta property='og:title' content={title} />
+    <meta
+      property='og:image'
+      content='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20630%22%3E%3Crect%20fill%3D%22%23fff%22%20width%3D%22100%25%22%20height%3D%22100%25%22%2F%3E%3CforeignObject%20width%3D%22600%22%20height%3D%22500%22%20x%3D%22300%22%20y%3D%2265%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22font-size%3A24px%3Bfont-family%3AArial%2Csans-serif%22%3EThis%20is%20a%20frame%20that%20displays%20a%20uri%20encoded%20svg.%3C%2Fdiv%3E%3Cbr%2F%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22font-size%3A24px%3B%22%3EText%20is%20displayed%20using%20a%20%26lt%3BforeignObject%26gt%3B%20tag.%20This%20lets%20us%20wrap%20the%20text%20if%20a%20line%20overflows.%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E'
+    />
+
+    <meta property='fc:frame' content='vNext' />
+    <meta property='fc:frame:image' content='https://placehold.co/1200x630' />
+    <meta property='fc:frame:button:1' content='Button 1' />
+    <!-- Add more buttons as needed -->
+    <meta property='fc:frame:post_url' content={url + `/api/handleFrameClick`} />
+  </head>
+
+  <body>
+    <h1>Simple Astro Frame With SVG</h1>
+    <p>A simple Farcaster Frame built with Astro</p>
+  </body>
+</html>
