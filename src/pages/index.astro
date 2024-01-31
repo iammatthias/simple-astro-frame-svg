@@ -1,6 +1,9 @@
 ---
 const title = import.meta.env.PUBLIC_TITLE;
 const url = import.meta.env.PUBLIC_URL;
+const svgString =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><rect fill="#fff" width="100%" height="100%"/><foreignObject width="600" height="500" x="300" y="65"><div xmlns="http://www.w3.org/1999/xhtml" style="font-size:24px;font-family:Arial,sans-serif;display:flex;align-items:center;height:100%">This is a frame that displays a uri encoded svg.<br/><br/>Text is displayed using a &lt;foreignObject&gt; tag. This lets us wrap the text if a line overflows.</div></foreignObject></svg>';
+const base64EncodedSVG = btoa(svgString);
 ---
 
 <!doctype html>
@@ -14,13 +17,11 @@ const url = import.meta.env.PUBLIC_URL;
 
     <meta property='fc:frame' content='vNext' />
 
-    <meta
-      property='fc:frame:image'
-      content='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCI+PHJlY3QgZmlsbD0iI2ZmZiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjxmb3JlaWduT2JqZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNTAwIiB4PSIzMDAiIHk9IjY1Ij48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZm9udC1zaXplOjI0cHg7Zm9udC1mYW1pbHk6QXJpYWwsc2Fucy1zZXJpZiI+VGhpcyBpcyBhIGZyYW1lIHRoYXQgZGlzcGxheXMgYSB1cmkgZW5jb2RlZCBzdmcuPC9kaXY+PGJyLz48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZm9udC1zaXplOjI0cHg7Ij5UZXh0IGlzIGRpc3BsYXllZCB1c2luZyBhICZsdDtmb3JlaWduT2JqZWN0Jmd0OyB0YWcuIFRoaXMgbGV0cyB1cyB3cmFwIHRoZSB0ZXh0IGlmIGEgbGluZSBvdmVyZmxvd3MuPC9kaXY+PC9mb3JlaWduT2JqZWN0Pjwvc3ZnPg=='
-    />
+    <meta property='fc:frame:image' content={`data:image/svg+xml;base64,` + base64EncodedSVG} />
     <meta property='fc:frame:button:1' content='Button 1' />
     <!-- Add more buttons as needed -->
-    <meta property='fc:frame:post_url' content={url + `/api/handleFrameClick`} />
+    <!-- <meta property='fc:frame:post_url' content={url + `/api/handleFrameClick`} /> -->
+    <meta property='fc:frame:post_url' content={url} />
   </head>
 
   <body>
@@ -28,3 +29,26 @@ const url = import.meta.env.PUBLIC_URL;
     <p>A simple Farcaster Frame built with Astro</p>
   </body>
 </html>
+
+<script>
+  // Handler for POST requests
+  export const POST = async ({ request }) => {
+    const requestData = await request.json();
+    // Process requestData, verify signature, etc.
+
+    // Return new frame metadata
+    return new Response(
+      `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property='fc:frame:image' content='https://placehold.co/1200x630?text=test' />
+        <!-- Add more meta tags as needed -->
+      </head>
+    </html>
+    `,
+      { headers: { "Content-Type": "text/html" } }
+    );
+  };
+</script>
