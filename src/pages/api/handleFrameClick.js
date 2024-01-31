@@ -12,7 +12,10 @@ export const POST = async ({ request }) => {
     <html>
       <head>
         <meta property="fc:frame" content="vNext" />
-        <meta property='fc:frame:image' content='https://placehold.co/1200x630?text=test' />
+        <meta
+          property='fc:frame:image'
+          content='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCI+PHJlY3QgZmlsbD0iI2ZmZiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjxmb3JlaWduT2JqZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNTAwIiB4PSIzMDAiIHk9IjY1Ij48ZGl2IHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzdHlsZT0iZm9udC1zaXplOjI0cHg7Zm9udC1mYW1pbHk6QXJpYWwsc2Fucy1zZXJpZjtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2hlaWdodDoxMDAlIj5UaGlzIGlzIGEgbmV3IGZyYW1lIHRoYXQgZGlzcGxheXMgYSBuZXcgdXJpIGVuY29kZWQgc3ZnLjwvZGl2PjwvZm9yZWlnbk9iamVjdD48L3N2Zz4='
+        />
         <!-- Add more meta tags as needed -->
       </head>
     </html>
